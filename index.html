@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LandingCalc | Landing Page Cost Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="theme-blue">
+    <div class="container">
+      <header>
+        <h1>LandingCalc</h1>
+        <p class="subtitle">
+          Calculate your landing page cost and test different variations
+        </p>
+      </header>
+
+      <section class="control-panel">
+        <div class="control-group">
+          <label><i class="fas fa-palette"></i> Color Theme</label>
+          <div class="btn-group">
+            <button class="btn active" data-theme="blue">Blue</button>
+            <button class="btn" data-theme="dark">Dark</button>
+            <button class="btn" data-theme="green">Green</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label><i class="fas fa-layer-group"></i> Layout</label>
+          <select id="layoutSelect">
+            <option value="standard">Standard</option>
+            <option value="minimal">Minimal</option>
+            <option value="creative">Creative</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label><i class="fas fa-vial"></i> A/B Testing</label>
+          <div class="btn-group">
+            <button class="btn active" data-test="off">Off</button>
+            <button class="btn" data-test="on">On</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="main-content">
+        <section class="components-section">
+          <h2><i class="fas fa-puzzle-piece"></i> Select Components</h2>
+          <p>Add blocks to your landing page. Price updates automatically.</p>
+
+          <div class="components-grid" id="componentsGrid"></div>
+        </section>
+
+        <aside class="preview-section">
+          <h3 class="preview-title"><i class="fas fa-eye"></i> Page Preview</h3>
+
+          <div class="preview-container">
+            <div class="preview-layout" id="previewLayout">
+              <div class="preview-block header">Header</div>
+              <div class="preview-block hero">Hero Section</div>
+              <div class="preview-block features">Features</div>
+              <div class="preview-block">Testimonials</div>
+              <div class="preview-block cta">Call to Action</div>
+              <div class="preview-block">Contact Form</div>
+              <div class="preview-block">Footer</div>
+            </div>
+          </div>
+
+          <div class="total-section">
+            <div class="total-row">
+              <span>Base landing page:</span>
+              <span>$<span id="basePrice">1,500</span></span>
+            </div>
+            <div class="total-row">
+              <span>Selected components:</span>
+              <span>$<span id="componentsPrice">0</span></span>
+            </div>
+            <div class="total-row">
+              <span>Urgency <span class="badge">+30%</span>:</span>
+              <span>$<span id="urgencyPrice">0</span></span>
+            </div>
+            <div class="total-row">
+              <strong>Total:</strong>
+              <strong>$<span id="totalPrice">1,500</span></strong>
+            </div>
+          </div>
+
+          <button class="btn export-btn">
+            <i class="fas fa-download"></i> Export to Figma
+          </button>
+        </aside>
+      </div>
+
+      <section class="ab-testing" id="abTestingSection">
+        <h2><i class="fas fa-flask"></i> A/B Component Testing</h2>
+        <p>Compare different component variations to increase conversion</p>
+
+        <div class="ab-variants">
+          <div class="ab-variant active" data-variant="a">
+            <h4><i class="fas fa-toggle-on"></i> Variant A (Control)</h4>
+            <p>Standard CTA button with "Submit Application" text</p>
+            <div class="stats">
+              <div class="stat">
+                <i class="fas fa-mouse-pointer"></i> CTR: 4.2%
+              </div>
+              <div class="stat">
+                <i class="fas fa-chart-line"></i> Conversion: 12%
+              </div>
+            </div>
+          </div>
+
+          <div class="ab-variant" data-variant="b">
+            <h4><i class="fas fa-toggle-off"></i> Variant B (Test)</h4>
+            <p>Button with "Get Free Consultation" text</p>
+            <div class="stats">
+              <div class="stat">
+                <i class="fas fa-mouse-pointer"></i> CTR: 5.8%
+              </div>
+              <div class="stat">
+                <i class="fas fa-chart-line"></i> Conversion: 18%
+              </div>
+            </div>
+          </div>
+
+          <div class="ab-variant" data-variant="c">
+            <h4><i class="fas fa-toggle-off"></i> Variant C (Experiment)</h4>
+            <p>Button with icon and "Start Now" text</p>
+            <div class="stats">
+              <div class="stat">
+                <i class="fas fa-mouse-pointer"></i> CTR: 6.3%
+              </div>
+              <div class="stat">
+                <i class="fas fa-chart-line"></i> Conversion: 21%
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>LandingCalc © 2024 | Landing page calculator for marketing teams</p>
+        <p class="tech-stack">
+          <i class="fas fa-code"></i> HTML5, CSS3, JavaScript |
+          <i class="fas fa-mobile-alt"></i> Responsive |
+          <i class="fas fa-vial"></i> A/B Testing
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
